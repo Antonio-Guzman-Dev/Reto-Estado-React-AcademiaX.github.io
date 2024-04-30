@@ -1,0 +1,49 @@
+.imagen_videojuegos {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contenedor_productos{
+    display: flex;
+    justify-content: space-around;
+}
+@media(max-width: 970px){
+    .contenedor_productos{
+        display: grid;
+    }
+}
+
+.contenedor_producto {
+    width: 400px;
+    height: 420px;
+    margin-top: 5rem;
+    border-radius: 10px;
+    box-shadow: 7px 11px 5px 0px rgba(230,230,230,0.67);
+    border: 1px solid rgb(219, 219, 219);
+    text-align: left;
+}
+.contenedor_producto h1{
+    margin: 16px 18px;
+}
+.contenedor_producto p{
+    margin: 16px 18px;
+}
+
+.contenedor_contador {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_contador p {
+    text-align: center;
+    width: 100%;
+    max-width: 260px;
+}
+
+button{
+    background-color: rgb(39, 147, 255);
+    color: white;
+    width: 30px;
+    height: 40px;
+    margin: 0 10px;
+}

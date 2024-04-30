@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Reto: Estado - Academia X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div id="root" class="root"></div>
+    <script type="text/babel">
+
+    const Productos = (props)=>{
+        return(
+            <div class="contenedor_producto">
+                <img src={props.imagen} class={props.clase} />
+                <h1>{props.titulo}</h1>
+                <p>{props.descripcion}</p>
+                {props.children}
+            </div>
+        );
+    }
+
+    const SeccionProductos = (props)=>{
+
+        const [cantidad, setCantidad] = React.useState(0);
+        const [cantidad02, setCantidad02] = React.useState(0);
+        const [cantidad03, setCantidad03] = React.useState(0);
+
+        const aumentarCantidad = ()=>{
+                setCantidad(cantidad + 1);
+        }
+        const disminuirCantidad = ()=>{
+            if(cantidad > 0){
+                setCantidad(cantidad - 1);
+            }
+        }
+
+        const aumentarCantidad02 = ()=>{
+                setCantidad02(cantidad02 + 1);
+        }
+        const disminuirCantidad02 = ()=>{
+            if(cantidad02 > 0){
+                setCantidad02(cantidad02 - 1);
+            }
+        }
+
+        const aumentarCantidad03 = ()=>{
+                setCantidad03(cantidad03 + 1);
+        }
+        const disminuirCantidad03 = ()=>{
+            if(cantidad03 > 0){
+                setCantidad03(cantidad03 - 1);
+            }
+        }
+
+        return(
+            
+            <div class="contenedor_productos">
+                <Productos imagen="imagen-videojuegos.jpg" titulo="Consola de videojuegos" descripcion="Esta es una consola de videojuegos que utilizan los programadores en sus breaks" clase="imagen_videojuegos">
+                    <div class="contenedor_contador">
+                        <button onClick={disminuirCantidad}>-</button>
+                            <p>{cantidad}</p>
+                        <button onClick={aumentarCantidad}>+</button>
+                    </div>
+                </Productos>
+
+                <Productos imagen="imagen-videojuegos.jpg" titulo="Consola de videojuegos" descripcion="Esta es una consola de videojuegos que utilizan los programadores en sus breaks" clase="imagen_videojuegos">
+                    <div class="contenedor_contador">
+                        <button onClick={disminuirCantidad02}>-</button>
+                            <p>{cantidad02}</p>
+                        <button onClick={aumentarCantidad02}>+</button>
+                    </div>
+                </Productos>
+
+                <Productos imagen="imagen-videojuegos.jpg" titulo="Consola de videojuegos" descripcion="Esta es una consola de videojuegos que utilizan los programadores en sus breaks" clase="imagen_videojuegos">
+                    <div class="contenedor_contador">
+                        <button onClick={disminuirCantidad03}>-</button>
+                            <p>{cantidad03}</p>
+                        <button onClick={aumentarCantidad03}>+</button>
+                    </div>
+                </Productos>
+            </div>
+        
+        );
+    }
+
+
+    ReactDOM.render(<SeccionProductos />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
